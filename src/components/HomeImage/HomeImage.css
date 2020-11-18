@@ -1,0 +1,53 @@
+.image-container{
+    height: 180vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: beige;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.picture-title{
+    color: beige;
+    margin: 0%;
+    padding: 3% 0% 1% 0% ;
+}
+
+.date-container{
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30vw;
+    font-family: 'Codystar', cursive;
+    font-weight: 400;
+}
+
+.date-title, .date {
+    margin: 0%;
+    padding: 0%;
+
+}
+
+.todays-image{
+    padding: 1%;
+    width: 99%;
+}
+
+
+.description-container{
+    background-color: beige;
+}
+
+.description-title{
+    color: black;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 3em;
+    padding: 3% 0% 0% 0%;
+    margin: 0%;
+}
+
+.description{
+    color: black;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 1.5em;
+    padding: 2%;
+}

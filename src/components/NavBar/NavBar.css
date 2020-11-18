@@ -1,0 +1,45 @@
+.nav-container{
+    background-color: rgb(29 29 162 / 92%);
+    height: 20vh;
+    padding: 3%;
+    display: grid;
+    /* grid-template-columns: repeat(6, .5fr); */
+    grid-template-rows: repeat(6, .5fr);
+}
+
+.link-container{
+    grid-area: 1/ 4/ 5/ 7;
+}
+
+.link-list{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.link{
+    color: rgb(240, 240, 156);
+    font-size: 1.2em;
+    font-family: 'Hind Siliguri', sans-serif;
+    margin: 1%;
+    
+}
+
+.link:hover{
+    color: rgb(255, 255, 0);
+    border-bottom: 2px dotted beige;
+}
+/* /font-family: 'Big Shoulders Inline Text', cursive; */
+/*
+font-family: 'Big Shoulders Inline Text', cursive;
+font-family: 'Hind Siliguri', sans-serif;
+*/
+.app-title{
+    grid-area: 1/ 1/ 7/ 4;
+    color: rgb(240, 240, 97);
+    font-family: 'Big Shoulders Inline Text';
+    font-size: 6em;
+    margin: 0%;
+}

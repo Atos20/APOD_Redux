@@ -59,4 +59,15 @@ font-family: 'Hind Siliguri', sans-serif;
     text-align:center;
     transition: all 0.2s;
     border: none;
+    outline: none;
+}
+
+.find-button:hover{
+    background-color:#FFFFFF;
+    color:#4eb5f1;
+    cursor: pointer;
+}
+
+.find-button:active{
+    padding-bottom: 1%;
 }

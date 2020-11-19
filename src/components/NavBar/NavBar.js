@@ -1,8 +1,10 @@
 import React from 'react'
 import './NavBar.css'
+import { toggleForm } from '../../actions';
+import { useDispatch } from 'react-redux';
+
 export const NavBar = (props) => {
-
-
+    const dispatch = useDispatch()
     return (
         <nav className='nav-container'>
           <h1 className="app-title">NASA Pik of the day</h1>
@@ -14,7 +16,7 @@ export const NavBar = (props) => {
               </ul>
           </div>
           <button 
-            onClick={props.displayForm}
+            onClick={() => dispatch(toggleForm())}
             className='find-button'
             >
             find

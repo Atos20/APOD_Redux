@@ -1,44 +1,23 @@
-import { render } from '@testing-library/react';
 import {React, Component } from 'react';
 import { HomeImage } from '../HomeImage/HomeImage';
-// import { Counter } from '../../features/counter/Counter';
 import { NavBar } from '../NavBar/NavBar'
-import './App.css';
-import moment from 'moment';
-import { getPictureOfTheDay, getPicturesOfTheWeek } from '../../apiCalls/apiCalls';
+import { getPicturesOfTheWeek } from '../../apiCalls/apiCalls';
 import { PicturesContainer } from '../PicturesContainer/PicturesContainer';
-import { Form } from '../Form/Form'
+import { Form } from '../Form/Form';
+import moment from 'moment';
+import { connect } from 'react-redux';
+import { fetchPictureOfTheDay } from '../../actions/getDataAction'
+import './App.css';
 export class App extends Component {
-  constructor() {
-    super()
-
+  constructor(props) {
+    super(props)
+    console.log(props)
     this.state = {
-      isFormVisible: false,
       isLoading: true,
       today: moment(),
-      pictureOfTheDay : {},
+      // pictureOfTheDay: {},
       thisWeeksPictures: {},
       previousDays:[]
-    }
-  }
-
-  displayForm = () => {
-    this.setState(prevState => ({
-      isFormVisible: !prevState.isFormVisible
-    }));
-  }
-  
-  updateMainImage = () => {
-    console.log('selected')
-  }
-
-  getPictureOfTheDay = async() => {
-    const { today } = this.state
-    try{
-      const  pictureOfTheDay = await getPictureOfTheDay(today.format('YYYY-MM-DD'))
-      this.setState({ pictureOfTheDay })
-    } catch(error) {
-      console.log(error)
     }
   }
 
@@ -64,7 +43,8 @@ export class App extends Component {
   }
 
   componentDidMount = () => {
-    this.getPictureOfTheDay();
+    console.log('componentDidMount')
+    this.props.fetchPictureOfTheDay()
     this.getThisWeeksPictures();
     this.getPreviousImages();
   }
@@ -78,27 +58,29 @@ export class App extends Component {
     } = this.state
 
     return (
-      <div className="App">
-        <NavBar 
-        displayForm={this.displayForm}/>
 
-        <Form 
-        isFormVisible={isFormVisible}
-        today={today}/>
+        <div className="App">
+          <NavBar 
+          displayForm={this.displayForm}/>
 
-        <HomeImage 
-            pictureOfTheDay={pictureOfTheDay}
-        />
+          <Form 
+          isFormVisible={isFormVisible}
+          today={today}/>
 
-        <PicturesContainer 
-            updateMainImage={this.updateMainImage}
-            previousDays={previousDays}
-        />
+          <HomeImage 
+              pictureOfTheDay={pictureOfTheDay}
+          />
 
-      </div>
+          <PicturesContainer 
+              updateMainImage={this.updateMainImage}
+              previousDays={previousDays}
+          />
+
+        </div>
+
     );
   }
 
 }
 
-
+export default connect(null, { fetchPictureOfTheDay })(App)

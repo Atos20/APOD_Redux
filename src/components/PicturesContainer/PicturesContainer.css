@@ -1,0 +1,51 @@
+.pictures-container{
+    height: 100%;
+    background-color: black;
+}
+
+.pics-title{
+    color: beige;
+    margin: 0%;
+    padding: 4%;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 3em;   
+}
+
+.all-images{
+    /* background-color: beige; */
+    margin: 2%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 5px;
+    grid-auto-flow: row;
+}
+
+.single-container{
+    height: 50%;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.image{
+    width: 100%;
+}
+
+.image-title{
+    margin: 0%;
+    padding: 1%;
+    color: beige;
+    font-size: 1.4em;
+    font-family: 'Big Shoulders Inline Text', cursive;
+}
+.date{
+    color: beige;
+    padding: 1%;
+    font-size: 1em;
+    font-family: 'Codystar', cursive;
+}

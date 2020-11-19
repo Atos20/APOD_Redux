@@ -6,17 +6,31 @@ import { NavBar } from '../NavBar/NavBar'
 import './App.css';
 import moment from 'moment';
 import { getPictureOfTheDay, getPicturesOfTheWeek } from '../../apiCalls/apiCalls';
-
+import { PicturesContainer } from '../PicturesContainer/PicturesContainer';
+import { Form } from '../Form/Form'
 export class App extends Component {
   constructor() {
     super()
 
     this.state = {
+      isFormVisible: false,
+      isLoading: true,
       today: moment(),
       pictureOfTheDay : {},
       thisWeeksPictures: {},
-      lastSevenDays:{}
+      previousDays:[]
     }
+  }
+
+  displayForm = () => {
+    console.log('find button')
+    this.setState(prevState => ({
+      isFormVisible: !prevState.isFormVisible
+    }));
+  }
+  
+  updateMainImage = () => {
+    console.log('selected')
   }
 
   getPictureOfTheDay = async() => {
@@ -32,22 +46,19 @@ export class App extends Component {
   getThisWeeksPictures = async () => {
     const today = moment();
     const from_date = today.startOf('week').format('YYYY-MM-DD');
-
     try{
       const thisWeeksPictures = await getPicturesOfTheWeek(from_date, this.state.today.format('YYYY-MM-DD'))    
-      console.log('data for the week',thisWeeksPictures)
     }catch(error){
       console.log(error)
     }
   }
 
-  getPicturesFromLastSevenDays = async () => {
+  getPreviousImages = async () => {
     const today = moment();
-    const startingDate = today.subtract(7, 'days').format('YYYY-MM-DD');
-    console.log(startingDate)
+    const startingDate = today.subtract(8, 'days').format('YYYY-MM-DD');
     try{
-      const lastSevenDays = await getPicturesOfTheWeek(startingDate, this.state.today.format('YYYY-MM-DD'))
-      this.setState({ lastSevenDays }) 
+      const previousDays = await getPicturesOfTheWeek(startingDate, this.state.today.format('YYYY-MM-DD'));
+      this.setState({ previousDays }) 
     }catch(error){
       console.log(error)
     }
@@ -56,15 +67,35 @@ export class App extends Component {
   componentDidMount = () => {
     this.getPictureOfTheDay();
     this.getThisWeeksPictures();
-    this.getPicturesFromLastSevenDays();
+    this.getPreviousImages();
   }
 
   render() {
-    const { pictureOfTheDay } = this.state
+    const { 
+      pictureOfTheDay, 
+      previousDays, 
+      today, 
+      isFormVisible 
+    } = this.state
+
     return (
       <div className="App">
-        <NavBar />
-        <HomeImage pictureOfTheDay={pictureOfTheDay}/>
+        <NavBar 
+        displayForm={this.displayForm}/>
+
+        <Form 
+        isFormVisible={isFormVisible}
+        today={today}/>
+
+        <HomeImage 
+            pictureOfTheDay={pictureOfTheDay}
+        />
+
+        <PicturesContainer 
+            updateMainImage={this.updateMainImage}
+            previousDays={previousDays}
+        />
+
       </div>
     );
   }

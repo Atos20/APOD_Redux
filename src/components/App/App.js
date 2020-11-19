@@ -23,7 +23,6 @@ export class App extends Component {
   }
 
   displayForm = () => {
-    console.log('find button')
     this.setState(prevState => ({
       isFormVisible: !prevState.isFormVisible
     }));

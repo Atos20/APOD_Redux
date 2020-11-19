@@ -5,7 +5,7 @@ export const HomeImage = (props) => {
     const { pictureOfTheDay } = props
 
     return (
-        <div className='image-container'>
+        <div className='container'>
             <h1 className="picture-title">{pictureOfTheDay.title}</h1>
             <div className="date-container">
                 <h3 className="date-title">taken on</h3>

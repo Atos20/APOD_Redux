@@ -3,7 +3,7 @@ const INITIAL_STATE = {
     previousPictures: []
 }
 
-export const fetchPictureOfTheDayReducer = (state = INITIAL_STATE, action) => {
+export const requestDataReducer = (state = INITIAL_STATE, action) => {
     switch(action.type){
         case 'FETCH_PICTURE_OF_THE_DAY':
             return {
@@ -14,6 +14,11 @@ export const fetchPictureOfTheDayReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 previousPictures: action.payload
+            }
+        case 'SELECT_CURRENT_IMAGE':
+            return {
+                ...state,
+                pictureOfTheDay: action.payload
             }
         default:
             return state

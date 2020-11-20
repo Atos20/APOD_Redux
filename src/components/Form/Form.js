@@ -3,7 +3,6 @@ import './Form.css';
 
 
 export const Form = (props) => {
-    console.log(props)
         return (
             <>
             {props.isFormVisible &&

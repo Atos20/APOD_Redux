@@ -4,9 +4,9 @@ export const toggleForm =  () => dispatch => {
     })
 }
 
-export const updateInput = (event) => dispatch => {
+export const updateInputField = (date) => dispatch => {
     return dispatch({
         type: 'UPDATE_INPUT',
-        payload: event
+        payload: date
     })
 }

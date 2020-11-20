@@ -9,8 +9,7 @@ export const NavBar = (props) => {
           <div className="link-container">
               <ul className="link-list">
                   <li className="link">About</li>
-                  <li className="link">Last 7 days</li>
-                  <li className="link">Lat Month</li>
+                  <li className="link">Favorites</li>
               </ul>
           </div>
           <button 

@@ -5,6 +5,8 @@ export const fetchPictureOfTheDay = () => async dispatch => {
     const today = moment().format('YYYY-MM-DD')
     try{
         const pictureOfTheDay = await getPictureOfTheDay(today)
+        pictureOfTheDay.id = Date.now()
+        pictureOfTheDay.isSaved =  false
         return dispatch({
             type: 'FETCH_PICTURE_OF_THE_DAY',
             payload: pictureOfTheDay
@@ -38,4 +40,18 @@ export const selectCurrentImage = (currentImage) => dispatch => {
         type: 'SELECT_CURRENT_IMAGE',
         payload: currentImage
     })
+}
+
+export const fetchPictureByDate = (date) => async dispatch => {
+    try{
+        const pictureOfTheDay = await getPictureOfTheDay(date)
+        pictureOfTheDay.id = Date.now()
+        pictureOfTheDay.isSaved =  false
+        return dispatch({
+            type: 'FETCH_PICTURE_BY_DATE',
+            payload: pictureOfTheDay
+        });
+    } catch(error){
+        console.log(error)
+    }
 }

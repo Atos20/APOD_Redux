@@ -2,7 +2,7 @@ import {React, Component } from 'react';
 import { HomeImage } from '../HomeImage/HomeImage';
 import { NavBar } from '../NavBar/NavBar'
 import  PicturesContainer from '../PicturesContainer/PicturesContainer';
-import { Form } from '../Form/Form';
+import Form from '../Form/Form';
 import { connect } from 'react-redux';
 import { fetchPictureOfTheDay, fetchPreviousPictures } from '../../actions/getDataAction'
 import { updateInput, toggleForm  } from '../../actions';
@@ -27,7 +27,7 @@ export class App extends Component {
 
           <Form 
             isFormVisible={this.props.isFormVisible}
-            updateInput ={this.props.updateInput}
+            // updateInput ={this.props.updateInput}
             today={moment()}
 
           />
@@ -54,7 +54,6 @@ export default connect(mapStateToProps,
   { 
     fetchPictureOfTheDay, 
     fetchPreviousPictures,
-    updateInput,
     toggleForm
   }
   )(App)

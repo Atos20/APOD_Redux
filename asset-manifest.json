@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/APOD_Redux/static/css/main.8ecb3301.chunk.css",
+    "main.js": "/APOD_Redux/static/js/main.b6f8ef5a.chunk.js",
+    "main.js.map": "/APOD_Redux/static/js/main.b6f8ef5a.chunk.js.map",
+    "runtime-main.js": "/APOD_Redux/static/js/runtime-main.b717a900.js",
+    "runtime-main.js.map": "/APOD_Redux/static/js/runtime-main.b717a900.js.map",
+    "static/js/2.97b30f1a.chunk.js": "/APOD_Redux/static/js/2.97b30f1a.chunk.js",
+    "static/js/2.97b30f1a.chunk.js.map": "/APOD_Redux/static/js/2.97b30f1a.chunk.js.map",
+    "index.html": "/APOD_Redux/index.html",
+    "static/css/main.8ecb3301.chunk.css.map": "/APOD_Redux/static/css/main.8ecb3301.chunk.css.map",
+    "static/js/2.97b30f1a.chunk.js.LICENSE.txt": "/APOD_Redux/static/js/2.97b30f1a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b717a900.js",
+    "static/js/2.97b30f1a.chunk.js",
+    "static/css/main.8ecb3301.chunk.css",
+    "static/js/main.b6f8ef5a.chunk.js"
+  ]
+}

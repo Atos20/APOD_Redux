@@ -20,6 +20,11 @@ export const requestDataReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 pictureOfTheDay: action.payload
             }
+        case 'FETCH_PICTURE_BY_DATE':
+            return {
+                ...state,
+                pictureOfTheDay: action.payload
+            }
         default:
             return state
     }

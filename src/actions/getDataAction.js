@@ -18,7 +18,7 @@ export const fetchPictureOfTheDay = () => async dispatch => {
 
 export const fetchPreviousPictures = () => async dispatch => {
     const today = moment().format('YYYY-MM-DD');
-    const startingDate = moment().subtract(17, 'days').format('YYYY-MM-DD');
+    const startingDate = moment().subtract(30, 'days').format('YYYY-MM-DD');
     try{
       const lastWeekPictures = await getPicturesOfTheWeek(startingDate, today);
      lastWeekPictures.forEach((entry, i) => {

@@ -27,7 +27,6 @@ export class App extends Component {
 
           <Form 
             isFormVisible={this.props.isFormVisible}
-            // updateInput ={this.props.updateInput}
             today={moment()}
 
           />

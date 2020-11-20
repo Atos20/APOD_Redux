@@ -1,8 +1,21 @@
-import React from 'react';
-import './PicturesContainer.css';
+import React, { Component } from 'react';
 import moment from 'moment';
+import './PicturesContainer.css';
+import { selectCurrentImage } from '../../actions/getDataAction'
+import { connect } from 'react-redux';
+import { updateInput } from '../../actions';
 
-export const PicturesContainer = (props) => {
+const PicturesContainer = (props) => {
+
+    const updateMainImage = (event) => {
+      const image = props.previousDays.find(element =>element.id === +event.target.id)
+      props.selectCurrentImage(image)
+      window.scrollTo({
+        top: 100,
+        left: 100,
+        behavior: 'smooth'
+      });
+    }
 
     const injectData = () => {
         if(props.previousDays.length === 0) {
@@ -17,7 +30,8 @@ export const PicturesContainer = (props) => {
                   key={index}
                   >
                 <img
-                  onClick={props.updateMainImage}
+                  id={entry.id}
+                  onClick={(event)=> updateMainImage(event)}
                   src={entry.url}
                   alt={entry.title}
                   className='image'
@@ -41,3 +55,10 @@ export const PicturesContainer = (props) => {
         </div>
     )
 };
+
+
+// const mapDispatchToProps = dispatch => ({
+//   selectCurrentImage: currentImage => dispatch(selectCurrentImage(currentImage))
+// })
+
+export default connect(null, { selectCurrentImage } )(PicturesContainer)

@@ -1,17 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Form.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { updateInput } from '../../actions';
 
 
 export const Form = (props) => {
-
-    const isFormVisible = useSelector(state => state.isFormVisible);
-    const dispatch = useDispatch();
-    
+    console.log(props)
         return (
             <>
-            {isFormVisible &&
+            {props.isFormVisible &&
             <form 
                 // onSubmit={(event) => submitDate(event)}
                 className='form-container'>
@@ -20,7 +15,8 @@ export const Form = (props) => {
                 max={props.today.format('YYYY-MM-DD')}
                 name='date'
                 type='date' 
-                onChange={(event) => dispatch(updateInput(event))}
+                placeholder={props.today.format('YYYY-MM-DD')}
+                onChange={(event) => props.updateInput(event)}
                 className='date-input'/>
               <button 
                 className="submit-button">

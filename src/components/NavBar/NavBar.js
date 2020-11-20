@@ -16,7 +16,7 @@ export const NavBar = (props) => {
               </ul>
           </div>
           <button 
-            onClick={() => dispatch(toggleForm())}
+            onClick={() => props.toggleForm()}
             className='find-button'
             >
             find

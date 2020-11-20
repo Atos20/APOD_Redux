@@ -1,7 +1,7 @@
 import {React, Component } from 'react';
 import { HomeImage } from '../HomeImage/HomeImage';
 import { NavBar } from '../NavBar/NavBar'
-import { PicturesContainer } from '../PicturesContainer/PicturesContainer';
+import  PicturesContainer from '../PicturesContainer/PicturesContainer';
 import { Form } from '../Form/Form';
 import { connect } from 'react-redux';
 import { fetchPictureOfTheDay, fetchPreviousPictures } from '../../actions/getDataAction'
@@ -17,11 +17,10 @@ export class App extends Component {
   }
 
   render() {
-  console.log(this.props)
     return (
 
         <div className="App">
-        
+
           <NavBar
             toggleForm={this.props.toggleForm}
           />
@@ -43,8 +42,8 @@ export class App extends Component {
         </div>
     );
   }
-
 }
+
 const mapStateToProps =  state => ({
   pictureOfTheDay: state.data.pictureOfTheDay,
   previousPictures: state.data.previousPictures,

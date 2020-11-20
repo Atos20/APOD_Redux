@@ -12,8 +12,8 @@ export const fetchPictureOfTheDay = () => async dispatch => {
     } catch(error){
         console.log(error)
     }
- 
 }
+
 export const fetchPreviousPictures = () => async dispatch => {
     const today = moment().format('YYYY-MM-DD');
     const startingDate = moment().subtract(17, 'days').format('YYYY-MM-DD');
@@ -31,7 +31,6 @@ export const fetchPreviousPictures = () => async dispatch => {
     }catch(error){
       console.log(error)
     }
- 
 }
 
 export const selectCurrentImage = (currentImage) => dispatch => {

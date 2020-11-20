@@ -1,6 +1,6 @@
 import { isFormVisibleReducer } from './isFormVisible';
 import { updateInputReducer } from './updateInput';
-import { requestDataReducer } from './fetchReducer'
+import { requestDataReducer } from './dataReducer'
 import { combineReducers } from 'redux';
 
 export const allReducers = combineReducers({

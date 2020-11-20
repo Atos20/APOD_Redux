@@ -3,8 +3,8 @@
     height: 20vh;
     padding: 3%;
     display: grid;
-    /* grid-template-columns: repeat(6, .5fr); */
-    grid-template-rows: repeat(6, .5fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(7, 1fr);
 }
 
 .link-container{
@@ -37,7 +37,7 @@ font-family: 'Big Shoulders Inline Text', cursive;
 font-family: 'Hind Siliguri', sans-serif;
 */
 .app-title{
-    grid-area: 1/ 1/ 7/ 4;
+    grid-area: 3/ 1/ 6/ 4;
     color: rgb(240, 240, 97);
     font-family: 'Big Shoulders Inline Text';
     font-size: 6em;
@@ -45,7 +45,7 @@ font-family: 'Hind Siliguri', sans-serif;
 }
 
 .find-button{
-    grid-area: 5/ 5/ 6/ 7;;
+    grid-area: 6/ 6/ 6/ 7;
     display:inline-block;
     padding:0.3em 1.2em;
     margin:0 0.3em 0.3em 0;
